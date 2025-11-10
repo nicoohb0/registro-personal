@@ -1,15 +1,16 @@
 import tkinter as tk
 
-datos_guardados = []
+nombre_archivo = "datos-peso-corporal.txt"
+
+datos_guardados = []   
 
 def guardar_datos():
-    """Función para guardar el nombre y peso"""
-    
+
     nombre = entrada_nombre.get()
     peso_texto = entrada_peso.get()
     
     if not nombre or not peso_texto:
-        resultado.config(text="Por favor, completa ambos campos")
+        resultado.config(text="Completame ambos campos")
         return
     
     try:
@@ -27,8 +28,9 @@ def guardar_datos():
             "peso": peso
         }
         datos_guardados.append(datos)
+        guardar_en_txt()
         
-        resultado.config(text="¡Datos guardados correctamente!")
+        resultado.config(text="Datos guardados correctamente")
         
         entrada_nombre.delete(0, 'end')
         entrada_peso.delete(0, 'end')
@@ -36,10 +38,20 @@ def guardar_datos():
         mostrar_datos()
         
     except ValueError:
-        resultado.config(text="Por favor, ingresa un peso válido (número)")
+        resultado.config(text="Ingresa un peso válido (número)")
+        
+def guardar_en_txt():
+    try:
+        with open(nombre_archivo, 'w') as archivo:
+            archivo.write("---- REGISTRO PESO ----\n")
+            
+            for dato in datos_guardados:
+                linea = f"{dato['nombre']}, {dato['peso']} Kg\n"
+                archivo.write
+    except IOError:
+        resultado.config(text="Error al escribir el archivo TXT") 
 
 def mostrar_datos():
-    """Función para mostrar todos los datos guardados"""
     
     if not datos_guardados:
         lista_datos.config(text="No hay datos guardados")
@@ -54,10 +66,10 @@ def mostrar_datos():
 
 
 ventana = tk.Tk()
-ventana.title("Gestión de Peso Corporal")
-ventana.geometry("400x400")
+ventana.title("Peso Corporal")
+ventana.geometry("400x350")
 
-titulo = tk.Label(ventana, text="Registro de Peso Corporal", font=("Arial", 16, "bold"))
+titulo = tk.Label(ventana, text="Registro Peso Corporal", font=("Arial", 16, "bold"))
 titulo.pack(pady=10)
 
 frame_nombre = tk.Frame(ventana)
