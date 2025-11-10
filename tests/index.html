@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Peso Corporal</title>
 </head>
 <body>
     
+    <div id="formularioRegistro">
     <h1>Registro peso corporal</h1>
 
     <label>Nombre completo: </label>
-    <input type="text"><br><br>
+    <input type="text" id="nombreCompleto"><br><br>
 
     <label>Peso (kg): </label>
-    <input type="text" min="30" max="300"><br><br>
+    <input type="text" id="peso" min="30" max="300"><br><br>
 
-    <input type="button" value="guardar datos">
+    <input type="button" value="guardar datos" id="guardarBtn">
+</div><br>
+<div id="mensajeGuardado"></div>
 
+<script src="script.js"></script>
 </body>
 </html>
