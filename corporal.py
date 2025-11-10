@@ -1,6 +1,6 @@
 import tkinter as tk
 
-nombre_archivo = "datos-peso-corporal.txt"
+from crear_fichero import cargar_desde_txt, guardar_en_txt
 
 datos_guardados = []   
 
@@ -28,9 +28,12 @@ def guardar_datos():
             "peso": peso
         }
         datos_guardados.append(datos)
-        guardar_en_txt()
         
-        resultado.config(text="Datos guardados correctamente")
+        if guardar_en_txt(datos_guardados):
+            resultado.config(text="Datos guardados correctamente y en el fichero")
+        else:
+            resultado.config(text="Datos guardados, pero error al guardar en el fichero")
+
         
         entrada_nombre.delete(0, 'end')
         entrada_peso.delete(0, 'end')
@@ -39,17 +42,6 @@ def guardar_datos():
         
     except ValueError:
         resultado.config(text="Ingresa un peso válido (número)")
-        
-def guardar_en_txt():
-    try:
-        with open(nombre_archivo, 'w') as archivo:
-            archivo.write("---- REGISTRO PESO ----\n")
-            
-            for dato in datos_guardados:
-                linea = f"{dato['nombre']}, {dato['peso']} Kg\n"
-                archivo.write
-    except IOError:
-        resultado.config(text="Error al escribir el archivo TXT") 
 
 def mostrar_datos():
     
@@ -63,7 +55,7 @@ def mostrar_datos():
     
     lista_datos.config(text=texto_datos)
 
-
+datos_guardados = cargar_desde_txt()
 
 ventana = tk.Tk()
 ventana.title("Peso Corporal")
