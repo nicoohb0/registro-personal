@@ -1,4 +1,7 @@
 ---- REGISTRO PESO ----
-nico, 65.0 Kg
-lolo, 88.0 Kg
-pedro, 8.0 Kg
+antonio, 24.0 Kg
+Lucas, 80.0 Kg
+juan, 2.1 Kg
+luis, 65.0 Kg
+Ana, 65.5 Kg
+Luis, 78.0 Kg
