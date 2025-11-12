@@ -1,4 +1,0 @@
----- REGISTRO PESO ----
-nico, 65.0 Kg
-lolo, 88.0 Kg
-pedro, 8.0 Kg
