@@ -1,6 +1,6 @@
 import os
 
-nombre_archivo = "datos-peso-corporal.txt"
+nombre_archivo = "./src/datos-peso-corporal.txt"
 datos_guardados = []
 
 def cargar_desde_txt():

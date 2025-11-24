@@ -1,0 +1,4 @@
+---- REGISTRO PESO ----
+nico, 65.0 Kg
+lolo, 89.0 Kg
+sandra, 58.0 Kg
