@@ -1,6 +1,0 @@
----- REGISTRO PESO ----
-nico, 65.0 Kg
-lolo, 89.0 Kg
-sandra, 58.0 Kg
-antonio, 89.0 Kg
-op, 90.9 Kg
