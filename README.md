@@ -19,7 +19,7 @@ He hecho una aplicación web donde nos permite registar la altura y el peso de u
 1. Lo primero de todo tenemos que tener instalado el phyton3
 - La versión de **python** es 3.14.2 ([Descargar aquí](https://www.python.org/downloads/))
 
-2. Este es el comando para poder instalar y usar el **tkinder** de la plaicación
+2. Este es el comando para poder instalar y usar el **tkinder** de la aplicación
 
 ```bash
 pip install tk
