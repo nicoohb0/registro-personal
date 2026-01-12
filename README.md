@@ -1,6 +1,6 @@
 # Proyecto registro-personal
 
-Es una aplicación web que nos permite registar la altura y el peso de un usuario, 
+He hecho una aplicación web donde nos permite registar la altura y el peso de un usuario. La aplicación no solo guarda datos, sino que automáticamente te calcula el indice de masa corporal (IMC).
 
 ## 🚀 Características principales
 
@@ -17,19 +17,21 @@ Es una aplicación web que nos permite registar la altura y el peso de un usuari
 ## ⚙️ Instalación y ejecución de la aplicación
 
 1. Lo primero de todo tenemos que tener instalado el phyton3
+- **python** versión de python 3.14.2 ([Descargar aquí](https://www.python.org/downloads/))
 
-2. Para poder ejecutar la aplicación nos vamos a la cmd `cd /registro-personal/src`
+2. Este es el comando para poder instalar y usar el **tkinder** de la plaicación
+
+```bash
+pip install tk
+```
+
+3. Para poder ejecutar la aplicación nos vamos a la cmd `cd registro-personal/src` y pondremos el siguiente comando
 
 ```bash
 python corporal.py
 ```
 
-Se tendría que ver de esa forma
+Al ejecutar es comando anterior se tendría que ver de esa forma
 
 ![Mockup Pantalla 1](docs/captura01.png)
 
-3. Este es el comando para poder usar el **tkinder** de la plaicación
-
-```bash
-pip install tk
-```
