@@ -33,5 +33,5 @@ python corporal.py
 
 Al ejecutar es comando anterior se tendría que ver de esa forma
 
-![Mockup Pantalla 1](docs/captura01.png)
+![Mockup Pantalla 1](docs/captura02.png)
 
