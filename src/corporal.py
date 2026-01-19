@@ -4,9 +4,20 @@ from crear_fichero import cargar_desde_txt, guardar_en_txt
 
 datos_guardados = []   
 
-def guardar_datos():
+def validar_nombre(nuevo_texto):
+    # Solo permite letras y espacios, máximo 15 caracteres
+    if len(nuevo_texto) > 15:
+        return False
+    
+    # Si está vacío, permitir (para poder borrar)
+    if nuevo_texto == "":
+        return True
+    
+    # Solo permite letras y espacios
+    return nuevo_texto.replace(" ", "").isalpha()
 
-    nombre = entrada_nombre.get()
+def guardar_datos():
+    nombre = entrada_nombre.get().strip()
     peso_texto = entrada_peso.get()
     
     if not nombre or not peso_texto:
@@ -70,7 +81,9 @@ frame_nombre.pack(pady=5)
 label_nombre = tk.Label(frame_nombre, text="Nombre completo:")
 label_nombre.pack(side=tk.LEFT)
 
-entrada_nombre = tk.Entry(frame_nombre, width=30)
+# Registrar la función de validación
+vcmd = (ventana.register(validar_nombre), '%P')
+entrada_nombre = tk.Entry(frame_nombre, width=30, validate="key", validatecommand=vcmd)
 entrada_nombre.pack(side=tk.LEFT, padx=5)
 
 frame_peso = tk.Frame(ventana)
@@ -81,6 +94,11 @@ label_peso.pack(side=tk.LEFT)
 
 entrada_peso = tk.Entry(frame_peso, width=15)
 entrada_peso.pack(side=tk.LEFT, padx=5)
+
+# Agregar texto informativo sobre la validación del nombre
+info_nombre = tk.Label(ventana, text="Nombre: solo letras y espacios, máximo 15 caracteres", 
+                       font=("Arial", 9), fg="green")
+info_nombre.pack(pady=2)
 
 info_peso = tk.Label(ventana, text="Rango válido: 2.0 kg - 300.0 kg", font=("Arial", 10), fg="blue")
 info_peso.pack(pady=5)
